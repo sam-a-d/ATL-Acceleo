@@ -1,0 +1,8 @@
+.DS_Store
+/*.swp
+*/*/target/
+.settings
+target
+.classpath
+.project
+.metadata/

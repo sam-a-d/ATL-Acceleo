@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ASCII"?>
+<vendingMachineUAQ:VendingMachine xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:vendingMachineUAQ="http://www.example.org/vendingMachineUAQ" name="Coppito 1">
+  <location name="L'Aquila" lat="42.3507" long="13.3999"/>
+  <state/>
+  <keypad input="02"/>
+  <paymentProcessor operation="WAIT_FOR_PAYMENT_collectCoin" state="//@state"/>
+  <itemProcessor operation="PROCESSING_ITEM_processItem" state="//@state"/>
+  <inventory capacity="10" lastRestocked="2025-01-12T00:00:00.000+0600">
+    <itemGroups name="Chocolates" quantity="10" price="1.25" image="chocolate.png"/>
+    <itemGroups id="1" name="Drinks" quantity="10" price="2.25" image="drinks.png"/>
+    <itemGroups id="2" name="Cookies" quantity="10" price="2.0" image="cookies.png">
+      <items expiry="2025-12-31T00:00:00.000+0600"/>
+      <items id="1" expiry="2025-12-31T00:00:00.000+0600"/>
+      <items id="2" expiry="2025-12-31T00:00:00.000+0600"/>
+      <items id="3" expiry="2025-12-31T00:00:00.000+0600"/>
+      <items id="4" expiry="2025-12-31T00:00:00.000+0600"/>
+      <items id="5" expiry="2025-12-31T00:00:00.000+0600"/>
+      <items id="6" expiry="2025-12-31T00:00:00.000+0600"/>
+      <items id="7" expiry="2025-12-31T00:00:00.000+0600"/>
+      <items id="8" expiry="2025-12-31T00:00:00.000+0600"/>
+      <items id="9" expiry="2025-12-31T00:00:00.000+0600"/>
+    </itemGroups>
+  </inventory>
+</vendingMachineUAQ:VendingMachine>

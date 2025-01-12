@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ASCII"?>
+<vendingMachineUAQ:VendingMachine xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:vendingMachineUAQ="http://www.example.org/vendingMachineUAQ" name="Nocelle1">
+  <location name="Via Delle Nocelle, Laquila" lat="10.434" long="134.235"/>
+  <state stage="PROCESSING_ITEM"/>
+  <keypad operation="PROCESSING_ITEM_processItem" input="12"/>
+  <paymentProcessor operation="ITEM_DISPATCHED_dispatchChange" state="//@state"/>
+  <itemProcessor operation="PROCESSING_ITEM_processItem" state="//@state"/>
+  <inventory capacity="2" lastRestocked="2025-01-13T00:00:00.000+0600">
+    <itemGroups name="Ibuprufen" quantity="10" price="4.25" image="ibuprufen.png">
+      <items expiry="2025-09-25T00:00:00.000+0600"/>
+      <items id="1" expiry="2025-09-25T00:00:00.000+0600"/>
+      <items id="2" expiry="2025-09-25T00:00:00.000+0600"/>
+      <items id="3" expiry="2025-09-25T00:00:00.000+0600"/>
+      <items id="4" expiry="2025-09-25T00:00:00.000+0600"/>
+      <items id="5" expiry="2025-09-25T00:00:00.000+0600"/>
+      <items id="6" expiry="2025-09-25T00:00:00.000+0600"/>
+      <items id="7" expiry="2025-09-25T00:00:00.000+0600"/>
+      <items id="8" expiry="2025-09-25T00:00:00.000+0600"/>
+      <items id="9" expiry="2025-09-25T00:00:00.000+0600"/>
+    </itemGroups>
+    <itemGroups id="1" name="Supradyn" quantity="10" price="12.52" image="supradyn.png">
+      <items expiry="2025-10-11T00:00:00.000+0600"/>
+      <items id="1" expiry="2025-10-11T00:00:00.000+0600"/>
+      <items id="2" expiry="2025-10-11T00:00:00.000+0600"/>
+      <items id="3" expiry="2025-10-11T00:00:00.000+0600"/>
+      <items id="4" expiry="2025-10-11T00:00:00.000+0600"/>
+      <items id="5" expiry="2025-10-11T00:00:00.000+0600"/>
+      <items id="6" expiry="2025-10-11T00:00:00.000+0600"/>
+      <items id="7" expiry="2025-10-11T00:00:00.000+0600"/>
+      <items id="8" expiry="2025-10-11T00:00:00.000+0600"/>
+      <items id="9" expiry="2025-10-11T00:00:00.000+0600"/>
+    </itemGroups>
+  </inventory>
+</vendingMachineUAQ:VendingMachine>
