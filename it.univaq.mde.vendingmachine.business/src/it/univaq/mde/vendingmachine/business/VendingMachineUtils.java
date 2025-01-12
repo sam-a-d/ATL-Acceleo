@@ -57,6 +57,7 @@ public class VendingMachineUtils {
 		            var item = VendingMachineUAQFactory.eINSTANCE.createItem();
 		            item.setId(i);
 		            item.setExpiry(config.getExpiryDate());
+		            item.setItemGroup(itemGroup);
 		            itemGroup.getItems().add(item);
 		        }
 

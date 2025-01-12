@@ -589,6 +589,16 @@ public class VendingMachineUAQPackageImpl extends EPackageImpl implements Vendin
 	 * @generated
 	 */
 	@Override
+	public EReference getItem_ItemGroup() {
+		return (EReference) itemEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getInventory() {
 		return inventoryEClass;
 	}
@@ -760,6 +770,7 @@ public class VendingMachineUAQPackageImpl extends EPackageImpl implements Vendin
 
 		itemEClass = createEClass(ITEM);
 		createEAttribute(itemEClass, ITEM__EXPIRY);
+		createEReference(itemEClass, ITEM__ITEM_GROUP);
 
 		inventoryEClass = createEClass(INVENTORY);
 		createEReference(inventoryEClass, INVENTORY__ITEM_GROUPS);
@@ -909,9 +920,9 @@ public class VendingMachineUAQPackageImpl extends EPackageImpl implements Vendin
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getItemGroup_Image(), ecorePackage.getEString(), "image", null, 1, 1, ItemGroup.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getItemGroup_Items(), this.getItem(), null, "items", null, 0, -1, ItemGroup.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getItemGroup_Items(), this.getItem(), this.getItem_ItemGroup(), "items", null, 0, -1,
+				ItemGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getItemGroup__PositiveQuantity__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
 				"PositiveQuantity", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -926,6 +937,9 @@ public class VendingMachineUAQPackageImpl extends EPackageImpl implements Vendin
 		initEClass(itemEClass, Item.class, "Item", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getItem_Expiry(), ecorePackage.getEDate(), "expiry", null, 1, 1, Item.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getItem_ItemGroup(), this.getItemGroup(), this.getItemGroup_Items(), "itemGroup", null, 1, 1,
+				Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(inventoryEClass, Inventory.class, "Inventory", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

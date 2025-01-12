@@ -95,11 +95,13 @@ public interface ItemGroup extends HasId, NamedEntity {
 	/**
 	 * Returns the value of the '<em><b>Items</b></em>' containment reference list.
 	 * The list contents are of type {@link vendingMachineUAQ.Item}.
+	 * It is bidirectional and its opposite is '{@link vendingMachineUAQ.Item#getItemGroup <em>Item Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Items</em>' containment reference list.
 	 * @see vendingMachineUAQ.VendingMachineUAQPackage#getItemGroup_Items()
-	 * @model containment="true"
+	 * @see vendingMachineUAQ.Item#getItemGroup
+	 * @model opposite="itemGroup" containment="true"
 	 * @generated
 	 */
 	EList<Item> getItems();

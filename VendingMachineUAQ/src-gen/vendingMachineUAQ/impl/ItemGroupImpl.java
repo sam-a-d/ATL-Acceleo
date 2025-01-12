@@ -14,8 +14,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.ocl.pivot.evaluation.Executor;
 import org.eclipse.ocl.pivot.ids.TypeId;
@@ -263,7 +262,8 @@ public class ItemGroupImpl extends HasIdImpl implements ItemGroup {
 	@Override
 	public EList<Item> getItems() {
 		if (items == null) {
-			items = new EObjectContainmentEList<Item>(Item.class, this, VendingMachineUAQPackage.ITEM_GROUP__ITEMS);
+			items = new EObjectContainmentWithInverseEList<Item>(Item.class, this,
+					VendingMachineUAQPackage.ITEM_GROUP__ITEMS, VendingMachineUAQPackage.ITEM__ITEM_GROUP);
 		}
 		return items;
 	}
@@ -313,6 +313,21 @@ public class ItemGroupImpl extends HasIdImpl implements ItemGroup {
 		} catch (Throwable e) {
 			return ValueUtil.validationFailedDiagnostic(constraintName, this, diagnostics, context, e);
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case VendingMachineUAQPackage.ITEM_GROUP__ITEMS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getItems()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

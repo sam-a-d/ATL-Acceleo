@@ -14,6 +14,7 @@ import java.util.Date;
  * </p>
  * <ul>
  *   <li>{@link vendingMachineUAQ.Item#getExpiry <em>Expiry</em>}</li>
+ *   <li>{@link vendingMachineUAQ.Item#getItemGroup <em>Item Group</em>}</li>
  * </ul>
  *
  * @see vendingMachineUAQ.VendingMachineUAQPackage#getItem()
@@ -42,5 +43,29 @@ public interface Item extends HasId {
 	 * @generated
 	 */
 	void setExpiry(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Item Group</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link vendingMachineUAQ.ItemGroup#getItems <em>Items</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Item Group</em>' container reference.
+	 * @see #setItemGroup(ItemGroup)
+	 * @see vendingMachineUAQ.VendingMachineUAQPackage#getItem_ItemGroup()
+	 * @see vendingMachineUAQ.ItemGroup#getItems
+	 * @model opposite="items" required="true" transient="false"
+	 * @generated
+	 */
+	ItemGroup getItemGroup();
+
+	/**
+	 * Sets the value of the '{@link vendingMachineUAQ.Item#getItemGroup <em>Item Group</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Item Group</em>' container reference.
+	 * @see #getItemGroup()
+	 * @generated
+	 */
+	void setItemGroup(ItemGroup value);
 
 } // Item

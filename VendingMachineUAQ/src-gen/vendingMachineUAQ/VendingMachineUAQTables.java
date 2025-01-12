@@ -341,7 +341,7 @@ public class VendingMachineUAQTables extends AbstractTables
 		public static final ExecutorProperty _Inventory__VendingMachine__inventory = new ExecutorPropertyWithImplementation("VendingMachine", Types._Inventory, 4, new EcoreLibraryOppositeProperty(VendingMachineUAQPackage.Literals.VENDING_MACHINE__INVENTORY));
 
 		public static final ExecutorProperty _Item__expiry = new EcoreExecutorProperty(VendingMachineUAQPackage.Literals.ITEM__EXPIRY, Types._Item, 0);
-		public static final ExecutorProperty _Item__ItemGroup__items = new ExecutorPropertyWithImplementation("ItemGroup", Types._Item, 1, new EcoreLibraryOppositeProperty(VendingMachineUAQPackage.Literals.ITEM_GROUP__ITEMS));
+		public static final ExecutorProperty _Item__itemGroup = new EcoreExecutorProperty(VendingMachineUAQPackage.Literals.ITEM__ITEM_GROUP, Types._Item, 1);
 
 		public static final ExecutorProperty _ItemGroup__image = new EcoreExecutorProperty(VendingMachineUAQPackage.Literals.ITEM_GROUP__IMAGE, Types._ItemGroup, 0);
 		public static final ExecutorProperty _ItemGroup__items = new EcoreExecutorProperty(VendingMachineUAQPackage.Literals.ITEM_GROUP__ITEMS, Types._ItemGroup, 1);
@@ -1221,6 +1221,7 @@ public class VendingMachineUAQTables extends AbstractTables
 		private static final ExecutorProperty /*@NonNull*/ [] _Item = {
 			VendingMachineUAQTables.Properties._Item__expiry,
 			VendingMachineUAQTables.Properties._HasId__id,
+			VendingMachineUAQTables.Properties._Item__itemGroup,
 			OCLstdlibTables.Properties._OclElement__oclContainer,
 			OCLstdlibTables.Properties._OclElement__oclContents
 		};

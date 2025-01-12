@@ -665,13 +665,22 @@ public interface VendingMachineUAQPackage extends EPackage {
 	int ITEM__EXPIRY = HAS_ID_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Item Group</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ITEM__ITEM_GROUP = HAS_ID_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Item</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ITEM_FEATURE_COUNT = HAS_ID_FEATURE_COUNT + 1;
+	int ITEM_FEATURE_COUNT = HAS_ID_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Item</em>' class.
@@ -1197,6 +1206,17 @@ public interface VendingMachineUAQPackage extends EPackage {
 	EAttribute getItem_Expiry();
 
 	/**
+	 * Returns the meta object for the container reference '{@link vendingMachineUAQ.Item#getItemGroup <em>Item Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Item Group</em>'.
+	 * @see vendingMachineUAQ.Item#getItemGroup()
+	 * @see #getItem()
+	 * @generated
+	 */
+	EReference getItem_ItemGroup();
+
+	/**
 	 * Returns the meta object for class '{@link vendingMachineUAQ.Inventory <em>Inventory</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1642,6 +1662,14 @@ public interface VendingMachineUAQPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ITEM__EXPIRY = eINSTANCE.getItem_Expiry();
+
+		/**
+		 * The meta object literal for the '<em><b>Item Group</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ITEM__ITEM_GROUP = eINSTANCE.getItem_ItemGroup();
 
 		/**
 		 * The meta object literal for the '{@link vendingMachineUAQ.impl.InventoryImpl <em>Inventory</em>}' class.
