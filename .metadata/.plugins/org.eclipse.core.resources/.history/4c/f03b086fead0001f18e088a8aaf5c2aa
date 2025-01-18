@@ -1,0 +1,16 @@
+/**
+ */
+package vendingMachineUAQ;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Payment Processor</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ *
+ * @see vendingMachineUAQ.VendingMachineUAQPackage#getPaymentProcessor()
+ * @model
+ * @generated
+ */
+public interface PaymentProcessor extends HasOperation {
+} // PaymentProcessor

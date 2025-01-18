@@ -1,0 +1,158 @@
+package it.univaq.mde.vendingmachine.business;
+
+import java.io.IOException;
+import java.sql.Date;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.Map;
+
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.Diagnostician;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+
+import vendingMachineUAQ.STATES;
+import vendingMachineUAQ.STATE_OPERATIONS;
+import vendingMachineUAQ.VendingMachine;
+import vendingMachineUAQ.VendingMachineUAQFactory;
+import vendingMachineUAQ.VendingMachineUAQPackage;
+
+public class VendingMachineUtils {
+	
+	public static VendingMachine create() {
+		
+		var chocolateItemGroup = VendingMachineUAQFactory.eINSTANCE.createItemGroup();
+		chocolateItemGroup.setName("Chocolates");
+		chocolateItemGroup.setId(0);
+		chocolateItemGroup.setPrice(1.25f);
+		chocolateItemGroup.setQuantity(10);
+		chocolateItemGroup.setImage("chocolate.png");
+
+		var drinksItemGroup = VendingMachineUAQFactory.eINSTANCE.createItemGroup();
+		drinksItemGroup.setName("Drinks");
+		drinksItemGroup.setId(1);
+		drinksItemGroup.setPrice(2.25f);
+		drinksItemGroup.setQuantity(10);
+		drinksItemGroup.setImage("drinks.png");
+		
+		var cookiesItemGroup = VendingMachineUAQFactory.eINSTANCE.createItemGroup();
+		cookiesItemGroup.setName("Cookies");
+		cookiesItemGroup.setId(2);
+		cookiesItemGroup.setPrice(2.00f);
+		cookiesItemGroup.setQuantity(10);
+		cookiesItemGroup.setImage("cookies.png");
+		
+		for(int i = 0; i < 10; ++i) {
+			var item = VendingMachineUAQFactory.eINSTANCE.createItem();
+			item.setId(i);
+			item.setExpiry(Date.valueOf("2025-12-31"));
+			chocolateItemGroup.getItems().add(item);
+			drinksItemGroup.getItems().add(item);
+			cookiesItemGroup.getItems().add(item);
+			
+		}
+		
+		var inventory = VendingMachineUAQFactory.eINSTANCE.createInventory();
+		inventory.setId(0);
+		inventory.setCapacity(10);
+		inventory.setLastRestocked(Date.valueOf(LocalDate.now()));
+		inventory.getItemGroups().add(chocolateItemGroup);
+		inventory.getItemGroups().add(drinksItemGroup);
+		inventory.getItemGroups().add(cookiesItemGroup);
+		
+		var location = VendingMachineUAQFactory.eINSTANCE.createLocation();
+		location.setLat(42.3507F);
+		location.setLong(13.3999F);
+		location.setName("L'Aquila");
+		
+		var state = VendingMachineUAQFactory.eINSTANCE.createState();
+		state.setStage(STATES.SELECT_ITEM);
+		
+		var keypad = VendingMachineUAQFactory.eINSTANCE.createKeypad();
+		keypad.setInput("02");
+		keypad.setOperation(STATE_OPERATIONS.SELECT_ITEM_COLLECT_COIN);
+		
+		var itemProcessor = VendingMachineUAQFactory.eINSTANCE.createItemProcessor();
+		itemProcessor.setState(state);
+		itemProcessor.setOperation(STATE_OPERATIONS.PROCESSING_ITEM_PROCESS_ITEM);
+		
+		var paymentProcessor = VendingMachineUAQFactory.eINSTANCE.createPaymentProcessor();
+		paymentProcessor.setState(state);
+		paymentProcessor.setOperation(STATE_OPERATIONS.WAIT_FOR_PAYMENT_COLLECT_COIN);
+		
+		
+		var vendingMachine = VendingMachineUAQFactory.eINSTANCE.createVendingMachine();
+		vendingMachine.setName("Coppito 1");
+		vendingMachine.setInventory(inventory);
+		vendingMachine.setLocation(location);
+		vendingMachine.setState(state);
+		vendingMachine.setId(0);
+		vendingMachine.setKeypad(keypad);
+		vendingMachine.setPaymentProcessor(paymentProcessor);
+		vendingMachine.setItemProcessor(itemProcessor);
+		
+		return vendingMachine;
+	}
+	
+	public final static String FILENAME = "testVendingMachine.xmi";
+	
+	public static Diagnostic validate(VendingMachine vm) {
+		return Diagnostician.INSTANCE.validate(vm);
+	}
+	
+	public static void main(String[] args) {
+		VendingMachine vm = create();
+		serializeModel(vm, FILENAME);
+		VendingMachine loadedVm = load(FILENAME);
+
+		Diagnostic d = validate(loadedVm);
+		if (d.getSeverity() != Diagnostic.ERROR)
+			System.out.println("The model is valid");
+		else
+			System.out.println("The model is invalid");
+		System.out.println("Capacity:" + vm.getInventory().getCapacity() + "\nItems Available: ");
+		vm.getInventory().getItemGroups().forEach(z -> System.out.println(z.getName() + "\tQuantity:" + z.getQuantity() + "\tPrice:" + z.getPrice()));
+		
+	}
+	
+
+	public static VendingMachine load(String fileName) {
+		EPackage.Registry.INSTANCE.put(VendingMachineUAQPackage.eNS_URI, VendingMachineUAQPackage.eINSTANCE);
+		ResourceSet resSet = new ResourceSetImpl();
+		Resource resource = resSet.getResource(URI.createFileURI(fileName), true);
+		// Get the first model element and cast it to the right type, in my
+		// example everything is hierarchical included in this first node
+		VendingMachine myVm = (VendingMachine) resource.getContents().get(0);
+		
+		return myVm;
+	}
+
+	
+	public static void serializeModel(VendingMachine vm, String fileName) {
+		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+		Map<String, Object> m = reg.getExtensionToFactoryMap();
+		m.put("xmi", new XMIResourceFactoryImpl());
+
+		// Obtain a new resource set
+		ResourceSet resSet = new ResourceSetImpl();
+
+		// create a resource
+		Resource resource = resSet.createResource(URI.createURI(fileName));
+		resource.getContents().add(vm);
+
+		// now save the content.
+		try {
+			resource.save(Collections.EMPTY_MAP);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

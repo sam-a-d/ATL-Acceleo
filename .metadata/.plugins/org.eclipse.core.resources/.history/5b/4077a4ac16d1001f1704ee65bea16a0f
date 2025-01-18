@@ -1,0 +1,213 @@
+/**
+ */
+package vendingMachineUAQ.impl;
+
+import java.lang.reflect.InvocationTargetException;
+import java.util.Date;
+
+import java.util.Map;
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import vendingMachineUAQ.Item;
+import vendingMachineUAQ.VendingMachineUAQPackage;
+import vendingMachineUAQ.util.VendingMachineUAQValidator;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Item</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link vendingMachineUAQ.impl.ItemImpl#getExpiry <em>Expiry</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class ItemImpl extends HasIdImpl implements Item {
+	/**
+	 * The default value of the '{@link #getExpiry() <em>Expiry</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExpiry()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date EXPIRY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getExpiry() <em>Expiry</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExpiry()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date expiry = EXPIRY_EDEFAULT;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ItemImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return VendingMachineUAQPackage.Literals.ITEM;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Date getExpiry() {
+		return expiry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setExpiry(Date newExpiry) {
+		Date oldExpiry = expiry;
+		expiry = newExpiry;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VendingMachineUAQPackage.ITEM__EXPIRY, oldExpiry,
+					expiry));
+	}
+
+	/**
+	 * The cached validation expression for the '{@link #positiveId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Positive Id</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #positiveId(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String POSITIVE_ID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "\n" + "\t\t\tself.id >= 0";
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean positiveId(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VendingMachineUAQValidator.validate(VendingMachineUAQPackage.Literals.ITEM, this, diagnostics, context,
+				"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				VendingMachineUAQPackage.Literals.ITEM___POSITIVE_ID__DIAGNOSTICCHAIN_MAP,
+				POSITIVE_ID_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR,
+				VendingMachineUAQValidator.DIAGNOSTIC_SOURCE, VendingMachineUAQValidator.ITEM__POSITIVE_ID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+		case VendingMachineUAQPackage.ITEM__EXPIRY:
+			return getExpiry();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+		case VendingMachineUAQPackage.ITEM__EXPIRY:
+			setExpiry((Date) newValue);
+			return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+		case VendingMachineUAQPackage.ITEM__EXPIRY:
+			setExpiry(EXPIRY_EDEFAULT);
+			return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+		case VendingMachineUAQPackage.ITEM__EXPIRY:
+			return EXPIRY_EDEFAULT == null ? expiry != null : !EXPIRY_EDEFAULT.equals(expiry);
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case VendingMachineUAQPackage.ITEM___POSITIVE_ID__DIAGNOSTICCHAIN_MAP:
+			return positiveId((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (expiry: ");
+		result.append(expiry);
+		result.append(')');
+		return result.toString();
+	}
+
+} //ItemImpl

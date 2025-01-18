@@ -1,0 +1,587 @@
+/**
+ */
+package vendingMachineUAQ.impl;
+
+import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
+import java.util.Map;
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+import vendingMachineUAQ.Item;
+import vendingMachineUAQ.ItemGroup;
+import vendingMachineUAQ.NamedEntity;
+import vendingMachineUAQ.VendingMachineUAQPackage;
+import vendingMachineUAQ.util.VendingMachineUAQValidator;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Item Group</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link vendingMachineUAQ.impl.ItemGroupImpl#getName <em>Name</em>}</li>
+ *   <li>{@link vendingMachineUAQ.impl.ItemGroupImpl#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link vendingMachineUAQ.impl.ItemGroupImpl#getPrice <em>Price</em>}</li>
+ *   <li>{@link vendingMachineUAQ.impl.ItemGroupImpl#getImage <em>Image</em>}</li>
+ *   <li>{@link vendingMachineUAQ.impl.ItemGroupImpl#getItems <em>Items</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class ItemGroupImpl extends HasIdImpl implements ItemGroup {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQuantity()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int QUANTITY_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQuantity()
+	 * @generated
+	 * @ordered
+	 */
+	protected int quantity = QUANTITY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPrice() <em>Price</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrice()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final float PRICE_EDEFAULT = 0.0F;
+
+	/**
+	 * The cached value of the '{@link #getPrice() <em>Price</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrice()
+	 * @generated
+	 * @ordered
+	 */
+	protected float price = PRICE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getImage() <em>Image</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImage()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String IMAGE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getImage() <em>Image</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImage()
+	 * @generated
+	 * @ordered
+	 */
+	protected String image = IMAGE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getItems() <em>Items</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getItems()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Item> items;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ItemGroupImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return VendingMachineUAQPackage.Literals.ITEM_GROUP;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VendingMachineUAQPackage.ITEM_GROUP__NAME, oldName,
+					name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getQuantity() {
+		return quantity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setQuantity(int newQuantity) {
+		int oldQuantity = quantity;
+		quantity = newQuantity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VendingMachineUAQPackage.ITEM_GROUP__QUANTITY,
+					oldQuantity, quantity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public float getPrice() {
+		return price;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPrice(float newPrice) {
+		float oldPrice = price;
+		price = newPrice;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VendingMachineUAQPackage.ITEM_GROUP__PRICE, oldPrice,
+					price));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getImage() {
+		return image;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setImage(String newImage) {
+		String oldImage = image;
+		image = newImage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VendingMachineUAQPackage.ITEM_GROUP__IMAGE, oldImage,
+					image));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Item> getItems() {
+		if (items == null) {
+			items = new EObjectContainmentEList<Item>(Item.class, this, VendingMachineUAQPackage.ITEM_GROUP__ITEMS);
+		}
+		return items;
+	}
+
+	/**
+	 * The cached validation expression for the '{@link #validImageFormat(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Valid Image Format</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validImageFormat(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALID_IMAGE_FORMAT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "\n"
+			+ "\t\t\tself.image.toLowerCase().endsWith('.png') or\n"
+			+ "\t\t\tself.image.toLowerCase().endsWith('.jpg') or\n"
+			+ "\t\t\tself.image.toLowerCase().endsWith('.jpeg')";
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean validImageFormat(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VendingMachineUAQValidator.validate(VendingMachineUAQPackage.Literals.ITEM_GROUP, this, diagnostics,
+				context, "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				VendingMachineUAQPackage.Literals.ITEM_GROUP___VALID_IMAGE_FORMAT__DIAGNOSTICCHAIN_MAP,
+				VALID_IMAGE_FORMAT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR,
+				VendingMachineUAQValidator.DIAGNOSTIC_SOURCE,
+				VendingMachineUAQValidator.ITEM_GROUP__VALID_IMAGE_FORMAT);
+	}
+
+	/**
+	 * The cached validation expression for the '{@link #positiveQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Positive Quantity</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #positiveQuantity(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String POSITIVE_QUANTITY_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "\n"
+			+ "\t\t\tself.quantity >= 0";
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean positiveQuantity(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VendingMachineUAQValidator.validate(VendingMachineUAQPackage.Literals.ITEM_GROUP, this, diagnostics,
+				context, "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				VendingMachineUAQPackage.Literals.ITEM_GROUP___POSITIVE_QUANTITY__DIAGNOSTICCHAIN_MAP,
+				POSITIVE_QUANTITY_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR,
+				VendingMachineUAQValidator.DIAGNOSTIC_SOURCE, VendingMachineUAQValidator.ITEM_GROUP__POSITIVE_QUANTITY);
+	}
+
+	/**
+	 * The cached validation expression for the '{@link #validPrice(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Valid Price</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validPrice(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALID_PRICE_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "\n" + "\t\t\tself.price > 0.0";
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean validPrice(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VendingMachineUAQValidator.validate(VendingMachineUAQPackage.Literals.ITEM_GROUP, this, diagnostics,
+				context, "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				VendingMachineUAQPackage.Literals.ITEM_GROUP___VALID_PRICE__DIAGNOSTICCHAIN_MAP,
+				VALID_PRICE_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR,
+				VendingMachineUAQValidator.DIAGNOSTIC_SOURCE, VendingMachineUAQValidator.ITEM_GROUP__VALID_PRICE);
+	}
+
+	/**
+	 * The cached validation expression for the '{@link #uniqueItemIds(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Unique Item Ids</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #uniqueItemIds(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String UNIQUE_ITEM_IDS_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "\n"
+			+ "\t\t\tself.items->isUnique(i | i.id)";
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean uniqueItemIds(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VendingMachineUAQValidator.validate(VendingMachineUAQPackage.Literals.ITEM_GROUP, this, diagnostics,
+				context, "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				VendingMachineUAQPackage.Literals.ITEM_GROUP___UNIQUE_ITEM_IDS__DIAGNOSTICCHAIN_MAP,
+				UNIQUE_ITEM_IDS_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR,
+				VendingMachineUAQValidator.DIAGNOSTIC_SOURCE, VendingMachineUAQValidator.ITEM_GROUP__UNIQUE_ITEM_IDS);
+	}
+
+	/**
+	 * The cached validation expression for the '{@link #quantityMatchesItems(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Quantity Matches Items</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #quantityMatchesItems(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String QUANTITY_MATCHES_ITEMS_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "\n"
+			+ "\t\t\tself.items->size() = self.quantity";
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean quantityMatchesItems(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VendingMachineUAQValidator.validate(VendingMachineUAQPackage.Literals.ITEM_GROUP, this, diagnostics,
+				context, "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				VendingMachineUAQPackage.Literals.ITEM_GROUP___QUANTITY_MATCHES_ITEMS__DIAGNOSTICCHAIN_MAP,
+				QUANTITY_MATCHES_ITEMS_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR,
+				VendingMachineUAQValidator.DIAGNOSTIC_SOURCE,
+				VendingMachineUAQValidator.ITEM_GROUP__QUANTITY_MATCHES_ITEMS);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case VendingMachineUAQPackage.ITEM_GROUP__ITEMS:
+			return ((InternalEList<?>) getItems()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+		case VendingMachineUAQPackage.ITEM_GROUP__NAME:
+			return getName();
+		case VendingMachineUAQPackage.ITEM_GROUP__QUANTITY:
+			return getQuantity();
+		case VendingMachineUAQPackage.ITEM_GROUP__PRICE:
+			return getPrice();
+		case VendingMachineUAQPackage.ITEM_GROUP__IMAGE:
+			return getImage();
+		case VendingMachineUAQPackage.ITEM_GROUP__ITEMS:
+			return getItems();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+		case VendingMachineUAQPackage.ITEM_GROUP__NAME:
+			setName((String) newValue);
+			return;
+		case VendingMachineUAQPackage.ITEM_GROUP__QUANTITY:
+			setQuantity((Integer) newValue);
+			return;
+		case VendingMachineUAQPackage.ITEM_GROUP__PRICE:
+			setPrice((Float) newValue);
+			return;
+		case VendingMachineUAQPackage.ITEM_GROUP__IMAGE:
+			setImage((String) newValue);
+			return;
+		case VendingMachineUAQPackage.ITEM_GROUP__ITEMS:
+			getItems().clear();
+			getItems().addAll((Collection<? extends Item>) newValue);
+			return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+		case VendingMachineUAQPackage.ITEM_GROUP__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case VendingMachineUAQPackage.ITEM_GROUP__QUANTITY:
+			setQuantity(QUANTITY_EDEFAULT);
+			return;
+		case VendingMachineUAQPackage.ITEM_GROUP__PRICE:
+			setPrice(PRICE_EDEFAULT);
+			return;
+		case VendingMachineUAQPackage.ITEM_GROUP__IMAGE:
+			setImage(IMAGE_EDEFAULT);
+			return;
+		case VendingMachineUAQPackage.ITEM_GROUP__ITEMS:
+			getItems().clear();
+			return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+		case VendingMachineUAQPackage.ITEM_GROUP__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case VendingMachineUAQPackage.ITEM_GROUP__QUANTITY:
+			return quantity != QUANTITY_EDEFAULT;
+		case VendingMachineUAQPackage.ITEM_GROUP__PRICE:
+			return price != PRICE_EDEFAULT;
+		case VendingMachineUAQPackage.ITEM_GROUP__IMAGE:
+			return IMAGE_EDEFAULT == null ? image != null : !IMAGE_EDEFAULT.equals(image);
+		case VendingMachineUAQPackage.ITEM_GROUP__ITEMS:
+			return items != null && !items.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == NamedEntity.class) {
+			switch (derivedFeatureID) {
+			case VendingMachineUAQPackage.ITEM_GROUP__NAME:
+				return VendingMachineUAQPackage.NAMED_ENTITY__NAME;
+			default:
+				return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == NamedEntity.class) {
+			switch (baseFeatureID) {
+			case VendingMachineUAQPackage.NAMED_ENTITY__NAME:
+				return VendingMachineUAQPackage.ITEM_GROUP__NAME;
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case VendingMachineUAQPackage.ITEM_GROUP___VALID_IMAGE_FORMAT__DIAGNOSTICCHAIN_MAP:
+			return validImageFormat((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		case VendingMachineUAQPackage.ITEM_GROUP___POSITIVE_QUANTITY__DIAGNOSTICCHAIN_MAP:
+			return positiveQuantity((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		case VendingMachineUAQPackage.ITEM_GROUP___VALID_PRICE__DIAGNOSTICCHAIN_MAP:
+			return validPrice((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		case VendingMachineUAQPackage.ITEM_GROUP___UNIQUE_ITEM_IDS__DIAGNOSTICCHAIN_MAP:
+			return uniqueItemIds((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		case VendingMachineUAQPackage.ITEM_GROUP___QUANTITY_MATCHES_ITEMS__DIAGNOSTICCHAIN_MAP:
+			return quantityMatchesItems((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", quantity: ");
+		result.append(quantity);
+		result.append(", price: ");
+		result.append(price);
+		result.append(", image: ");
+		result.append(image);
+		result.append(')');
+		return result.toString();
+	}
+
+} //ItemGroupImpl

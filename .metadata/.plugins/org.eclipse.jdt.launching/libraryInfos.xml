@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+    <libraryInfo home="/Users/macbookpro/Library/Java/JavaVirtualMachines/corretto-17.0.7/Contents/Home" version="17.0.7"/>
+    <libraryInfo home="/Users/macbookpro/.sdkman/candidates/java/8.0.402-amzn" version="1.8.0_402">
+        <bootpath>
+            <entry path="/Users/macbookpro/.sdkman/candidates/java/8.0.402-amzn/jre/lib/resources.jar"/>
+            <entry path="/Users/macbookpro/.sdkman/candidates/java/8.0.402-amzn/jre/lib/rt.jar"/>
+            <entry path="/Users/macbookpro/.sdkman/candidates/java/8.0.402-amzn/jre/lib/sunrsasign.jar"/>
+            <entry path="/Users/macbookpro/.sdkman/candidates/java/8.0.402-amzn/jre/lib/jsse.jar"/>
+            <entry path="/Users/macbookpro/.sdkman/candidates/java/8.0.402-amzn/jre/lib/jce.jar"/>
+            <entry path="/Users/macbookpro/.sdkman/candidates/java/8.0.402-amzn/jre/lib/charsets.jar"/>
+            <entry path="/Users/macbookpro/.sdkman/candidates/java/8.0.402-amzn/jre/lib/jfr.jar"/>
+            <entry path="/Users/macbookpro/.sdkman/candidates/java/8.0.402-amzn/jre/classes"/>
+        </bootpath>
+        <extensionDirs>
+            <entry path="/Users/macbookpro/Library/Java/Extensions"/>
+            <entry path="/Users/macbookpro/.sdkman/candidates/java/8.0.402-amzn/jre/lib/ext"/>
+            <entry path="/Library/Java/Extensions"/>
+            <entry path="/Network/Library/Java/Extensions"/>
+            <entry path="/System/Library/Java/Extensions"/>
+            <entry path="/usr/lib/java"/>
+        </extensionDirs>
+        <endorsedDirs>
+            <entry path="/Users/macbookpro/.sdkman/candidates/java/8.0.402-amzn/jre/lib/endorsed"/>
+        </endorsedDirs>
+    </libraryInfo>
+    <libraryInfo home="/Users/macbookpro/.sdkman/candidates/java/17.0.10-amzn" version="17.0.10"/>
+    <libraryInfo home="/Users/macbookpro/.sdkman/candidates/java/23.0.1-amzn" version="23.0.1"/>
+    <libraryInfo home="/Users/macbookpro/.sdkman/candidates/java/11.0.22-amzn" version="11.0.22"/>
+    <libraryInfo home="/Users/macbookpro/.sdkman/candidates/java/17.0.7-amzn" version="17.0.7"/>
+    <libraryInfo home="/Users/macbookpro/Library/Java/JavaVirtualMachines/openjdk-20.0.1/Contents/Home" version="20.0.1"/>
+    <libraryInfo home="/Users/macbookpro/Library/Java/JavaVirtualMachines/corretto-1.8.0_402/Contents/Home" version="1.8.0_402">
+        <bootpath>
+            <entry path="/Users/macbookpro/Library/Java/JavaVirtualMachines/corretto-1.8.0_402/Contents/Home/jre/lib/resources.jar"/>
+            <entry path="/Users/macbookpro/Library/Java/JavaVirtualMachines/corretto-1.8.0_402/Contents/Home/jre/lib/rt.jar"/>
+            <entry path="/Users/macbookpro/Library/Java/JavaVirtualMachines/corretto-1.8.0_402/Contents/Home/jre/lib/sunrsasign.jar"/>
+            <entry path="/Users/macbookpro/Library/Java/JavaVirtualMachines/corretto-1.8.0_402/Contents/Home/jre/lib/jsse.jar"/>
+            <entry path="/Users/macbookpro/Library/Java/JavaVirtualMachines/corretto-1.8.0_402/Contents/Home/jre/lib/jce.jar"/>
+            <entry path="/Users/macbookpro/Library/Java/JavaVirtualMachines/corretto-1.8.0_402/Contents/Home/jre/lib/charsets.jar"/>
+            <entry path="/Users/macbookpro/Library/Java/JavaVirtualMachines/corretto-1.8.0_402/Contents/Home/jre/lib/jfr.jar"/>
+            <entry path="/Users/macbookpro/Library/Java/JavaVirtualMachines/corretto-1.8.0_402/Contents/Home/jre/classes"/>
+        </bootpath>
+        <extensionDirs>
+            <entry path="/Users/macbookpro/Library/Java/Extensions"/>
+            <entry path="/Users/macbookpro/Library/Java/JavaVirtualMachines/corretto-1.8.0_402/Contents/Home/jre/lib/ext"/>
+            <entry path="/Library/Java/Extensions"/>
+            <entry path="/Network/Library/Java/Extensions"/>
+            <entry path="/System/Library/Java/Extensions"/>
+            <entry path="/usr/lib/java"/>
+        </extensionDirs>
+        <endorsedDirs>
+            <entry path="/Users/macbookpro/Library/Java/JavaVirtualMachines/corretto-1.8.0_402/Contents/Home/jre/lib/endorsed"/>
+        </endorsedDirs>
+    </libraryInfo>
+    <libraryInfo home="/Users/macbookpro/Library/Java/JavaVirtualMachines/corretto-11.0.19/Contents/Home" version="11.0.19"/>
+    <libraryInfo home="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home" version="1.8.0_202">
+        <bootpath>
+            <entry path="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/resources.jar"/>
+            <entry path="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/rt.jar"/>
+            <entry path="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/sunrsasign.jar"/>
+            <entry path="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/jsse.jar"/>
+            <entry path="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/jce.jar"/>
+            <entry path="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/charsets.jar"/>
+            <entry path="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/jfr.jar"/>
+            <entry path="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/classes"/>
+        </bootpath>
+        <extensionDirs>
+            <entry path="/Users/macbookpro/Library/Java/Extensions"/>
+            <entry path="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/ext"/>
+            <entry path="/Library/Java/Extensions"/>
+            <entry path="/Network/Library/Java/Extensions"/>
+            <entry path="/System/Library/Java/Extensions"/>
+            <entry path="/usr/lib/java"/>
+        </extensionDirs>
+        <endorsedDirs>
+            <entry path="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/endorsed"/>
+        </endorsedDirs>
+    </libraryInfo>
+    <libraryInfo home="/Users/macbookpro/Library/Java/JavaVirtualMachines/corretto-17.0.11/Contents/Home" version="17.0.11"/>
+</libraryInfos>

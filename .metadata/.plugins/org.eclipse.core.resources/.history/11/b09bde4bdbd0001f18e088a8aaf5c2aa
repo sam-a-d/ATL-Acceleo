@@ -1,0 +1,16 @@
+/**
+ */
+package vendingMachineUAQ;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Vending Machine</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ *
+ * @see vendingMachineUAQ.VendingMachineUAQPackage#getVendingMachine()
+ * @model
+ * @generated
+ */
+public interface VendingMachine extends NamedEntity {
+} // VendingMachine

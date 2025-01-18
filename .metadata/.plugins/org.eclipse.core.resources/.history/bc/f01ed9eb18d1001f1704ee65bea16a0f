@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="vendingMachineUAQ" nsURI="http://www.example.org/vendingMachineUAQ"
+    nsPrefix="vendingMachineUAQ">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedEntity" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VendingMachine" eSuperTypes="#//NamedEntity #//HasId">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="location" eType="#//Location"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1" eType="#//State"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keypad" lowerBound="1"
+        eType="#//Keypad" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="paymentProcessor" lowerBound="1"
+        eType="#//PaymentProcessor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="itemProcessor" lowerBound="1"
+        eType="#//ItemProcessor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inventory" lowerBound="1"
+        eType="#//Inventory" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Location" eSuperTypes="#//NamedEntity">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="validLatitude validLongitude nameNotEmpty"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="validLatitude" value="&#xA;&#x9;&#x9;&#x9;self.lat >= -90.0 and self.lat &lt;= 90.0"/>
+      <details key="validLongitude" value="&#xA;&#x9;&#x9;&#x9;self.long >= -180.0 and self.long &lt;= 180.0"/>
+      <details key="nameNotEmpty" value="&#xA;&#x9;&#x9;&#x9;self.name &lt;> null and self.name.size() > 0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lat" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="long" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HasId" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="positiveId"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="positiveId" value="&#xA;&#x9;&#x9;&#x9;self.id >= 0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Keypad" eSuperTypes="#//HasOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="input" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HasOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" eType="#//STATE_OPERATIONS"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ItemProcessor" eSuperTypes="#//HasOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1" eType="#//State"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="State">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stage" lowerBound="1" eType="#//STATES"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="STATE_OPERATIONS">
+    <eLiterals name="SELECT_ITEM_collectCoin"/>
+    <eLiterals name="SELECT_ITEM_sendInput" value="1"/>
+    <eLiterals name="PROCESSING_ITEM_processItem" value="2"/>
+    <eLiterals name="ITEM_DISPATCHED_dispatchChange" value="3"/>
+    <eLiterals name="WAIT_FOR_PAYMENT_collectCoin" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PAYMENT_METHODS">
+    <eLiterals name="Coin"/>
+    <eLiterals name="App" value="1"/>
+    <eLiterals name="NFC" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="STATES">
+    <eLiterals name="SELECT_ITEM"/>
+    <eLiterals name="WAIT_FOR_PAYMENT" value="1"/>
+    <eLiterals name="PROCESSING_PAYMENT" value="2"/>
+    <eLiterals name="PROCESSING_ITEM" value="3"/>
+    <eLiterals name="ITEM_DESPATCHED" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PaymentProcessor" eSuperTypes="#//HasOperation">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="validAmount validStateForPayment"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="validAmount" value="&#xA;&#x9;&#x9;&#x9;self.amound >= 0.0"/>
+      <details key="validStateForPayment" value="&#xA;&#x9;&#x9;&#x9;self.operation = STATE_OPERATIONS::WAIT_FOR_PAYMENT_collectCoin implies&#xA;&#x9;&#x9;&#x9;self.state.stage = STATES::WAIT_FOR_PAYMENT"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="amound" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paymentMethod" lowerBound="1"
+        eType="#//PAYMENT_METHODS"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1" eType="#//State"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ItemGroup" eSuperTypes="#//HasId #//NamedEntity">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="positiveQuantity validPrice uniqueItemIds quantityMatchesItems validImageFormat"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="positiveQuantity" value="&#xA;&#x9;&#x9;&#x9;self.quantity >= 0"/>
+      <details key="validPrice" value="&#xA;&#x9;&#x9;&#x9;self.price > 0.0"/>
+      <details key="uniqueItemIds" value="&#xA;&#x9;&#x9;&#x9;self.items->isUnique(i | i.id)"/>
+      <details key="quantityMatchesItems" value="&#xA;&#x9;&#x9;&#x9;self.items->size() = self.quantity"/>
+      <details key="validImageFormat" value="&#xA;&#x9;&#x9;&#x9;self.image.toLowerCase().endsWith('.png') or&#xA;&#x9;&#x9;&#x9;self.image.toLowerCase().endsWith('.jpg') or&#xA;&#x9;&#x9;&#x9;self.image.toLowerCase().endsWith('.jpeg')"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="quantity" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="price" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="image" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+        eType="#//Item" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Item" eSuperTypes="#//HasId">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expiry" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Inventory" eSuperTypes="#//HasId">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="itemGroups" upperBound="-1"
+        eType="#//ItemGroup" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="capacity" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastRestocked" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+  </eClassifiers>
+</ecore:EPackage>

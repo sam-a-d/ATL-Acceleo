@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Business
+Bundle-SymbolicName: it.univaq.mde.vendingmachine.business
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: it.univaq.mde.vendingmachine.business
+Bundle-RequiredExecutionEnvironment: JavaSE-23

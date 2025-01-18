@@ -1,0 +1,57 @@
+#
+
+pluginName = VendingMachineUAQ Edit Support
+providerName = www.example.org
+
+_UI_CreateChild_text = {0}
+_UI_CreateChild_text2 = {1} {0}
+_UI_CreateChild_text3 = {1}
+_UI_CreateChild_tooltip = Create New {0} Under {1} Feature
+_UI_CreateChild_description = Create a new child of type {0} for the {1} feature of the selected {2}.
+_UI_CreateSibling_description = Create a new sibling of type {0} for the selected {2}, under the {1} feature of their parent.
+
+_UI_PropertyDescriptor_description = The {0} of the {1}
+
+_UI_NamedEntity_type = Named Entity
+_UI_VendingMachine_type = Vending Machine
+_UI_Unknown_type = Object
+
+_UI_Unknown_datatype= Value
+
+_UI_NamedEntity_name_feature = Name
+_UI_Unknown_feature = Unspecified
+
+_UI_Location_type = Location
+_UI_VendingMachine_location_feature = Location
+_UI_HasId_type = Has Id
+_UI_Keypad_type = Keypad
+_UI_HasOperation_type = Has Operation
+_UI_ItemProcessor_type = Item Processor
+_UI_State_type = State
+_UI_Location_lat_feature = Lat
+_UI_Location_long_feature = Long
+_UI_HasId_id_feature = Id
+_UI_Keypad_input_feature = Input
+_UI_HasOperation_operation_feature = Operation
+_UI_State_stage_feature = Stage
+_UI_STATE_OPERATIONS_SELECT_ITEM_collectCoin_literal = SELECT_ITEM_collectCoin
+_UI_STATE_OPERATIONS_SELECT_ITEM_sendInput_literal = SELECT_ITEM_sendInput
+_UI_STATE_OPERATIONS_PROCESSING_ITEM_processItem_literal = PROCESSING_ITEM_processItem
+_UI_STATE_OPERATIONS_ITEM_DISPATCHED_dispatchChange_literal = ITEM_DISPATCHED_dispatchChange
+_UI_STATE_OPERATIONS_WIAT_FOR_PAYMENT_collectCoin_literal = WIAT_FOR_PAYMENT_collectCoin
+_UI_PAYMENT_METHODS_Coin_literal = Coin
+_UI_PAYMENT_METHODS_App_literal = App
+_UI_PAYMENT_METHODS_NFC_literal = NFC
+_UI_STATES_SELECT_ITEM_literal = SELECT_ITEM
+_UI_STATES_WAIT_FOR_PAYMENT_literal = WAIT_FOR_PAYMENT
+_UI_STATES_PROCESSING_PAYMENT_literal = PROCESSING_PAYMENT
+_UI_STATES_PROCESSING_ITEM_literal = PROCESSING_ITEM
+_UI_STATES_ITEM_DESPATCHED_literal = ITEM_DESPATCHED
+_UI_PaymentProcessor_type = Payment Processor
+_UI_ItemGroup_type = Item Group
+_UI_Item_type = Item
+_UI_ItemGroup_quantity_feature = Quantity
+_UI_ItemGroup_price_feature = Price
+_UI_ItemGroup_image_feature = Image
+_UI_Item_expiry_feature = Expiry
+_UI_ItemProcessor_state_feature = State

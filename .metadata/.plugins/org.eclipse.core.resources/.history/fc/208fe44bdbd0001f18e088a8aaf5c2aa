@@ -1,0 +1,37 @@
+/**
+ */
+package vendingMachineUAQ.impl;
+
+import org.eclipse.emf.ecore.EClass;
+
+import vendingMachineUAQ.VendingMachine;
+import vendingMachineUAQ.VendingMachineUAQPackage;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Vending Machine</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * @generated
+ */
+public class VendingMachineImpl extends NamedEntityImpl implements VendingMachine {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected VendingMachineImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return VendingMachineUAQPackage.Literals.VENDING_MACHINE;
+	}
+
+} //VendingMachineImpl

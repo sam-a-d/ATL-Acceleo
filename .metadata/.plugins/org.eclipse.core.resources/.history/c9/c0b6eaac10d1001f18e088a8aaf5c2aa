@@ -1,0 +1,238 @@
+package it.univaq.mde.vendingmachine.business;
+
+import java.io.IOException;
+import java.sql.Date;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.Diagnostician;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+
+import vendingMachineUAQ.Location;
+import vendingMachineUAQ.STATES;
+import vendingMachineUAQ.STATE_OPERATIONS;
+import vendingMachineUAQ.VendingMachine;
+import vendingMachineUAQ.VendingMachineUAQFactory;
+import vendingMachineUAQ.VendingMachineUAQPackage;
+
+public class VendingMachineUtils {
+	
+	public static VendingMachine create(
+		    String name,
+		    int id,
+		    Location location,
+		    List<ItemGroupConfig> itemGroupConfigs,
+		    int inventoryCapacity,
+		    STATES initialState,
+		    String keypadInput,
+		    STATE_OPERATIONS keypadOperation,
+		    STATE_OPERATIONS itemProcessorOperation,
+		    STATE_OPERATIONS paymentProcessorOperation
+		) {
+		    var inventory = VendingMachineUAQFactory.eINSTANCE.createInventory();
+		    inventory.setId(id);
+		    inventory.setCapacity(inventoryCapacity);
+		    inventory.setLastRestocked(Date.valueOf(LocalDate.now()));
+
+		    for (ItemGroupConfig config : itemGroupConfigs) {
+		        var itemGroup = VendingMachineUAQFactory.eINSTANCE.createItemGroup();
+		        itemGroup.setName(config.getName());
+		        itemGroup.setId(config.getId());
+		        itemGroup.setPrice(config.getPrice());
+		        itemGroup.setQuantity(config.getQuantity());
+		        itemGroup.setImage(config.getImage());
+
+		        for (int i = 0; i < config.getQuantity(); ++i) {
+		            var item = VendingMachineUAQFactory.eINSTANCE.createItem();
+		            item.setId(i);
+		            item.setExpiry(config.getExpiryDate());
+		            itemGroup.getItems().add(item);
+		        }
+
+		        inventory.getItemGroups().add(itemGroup);
+		    }
+
+		    var state = VendingMachineUAQFactory.eINSTANCE.createState();
+		    state.setStage(initialState);
+
+		    var keypad = VendingMachineUAQFactory.eINSTANCE.createKeypad();
+		    keypad.setInput(keypadInput);
+		    keypad.setOperation(keypadOperation);
+
+		    var itemProcessor = VendingMachineUAQFactory.eINSTANCE.createItemProcessor();
+		    itemProcessor.setState(state);
+		    itemProcessor.setOperation(itemProcessorOperation);
+
+		    var paymentProcessor = VendingMachineUAQFactory.eINSTANCE.createPaymentProcessor();
+		    paymentProcessor.setState(state);
+		    paymentProcessor.setOperation(paymentProcessorOperation);
+
+		    var vendingMachine = VendingMachineUAQFactory.eINSTANCE.createVendingMachine();
+		    vendingMachine.setName(name);
+		    vendingMachine.setInventory(inventory);
+		    vendingMachine.setLocation(location);
+		    vendingMachine.setState(state);
+		    vendingMachine.setId(id);
+		    vendingMachine.setKeypad(keypad);
+		    vendingMachine.setPaymentProcessor(paymentProcessor);
+		    vendingMachine.setItemProcessor(itemProcessor);
+
+		    return vendingMachine;
+		}
+
+		public static class ItemGroupConfig {
+		    private String name;
+		    private int id;
+		    private float price;
+		    private int quantity;
+		    private String image;
+		    private Date expiryDate;
+
+		    public ItemGroupConfig(String name, int id, float price, int quantity, String image, Date expiryDate) {
+		        this.name = name;
+		        this.id = id;
+		        this.price = price;
+		        this.quantity = quantity;
+		        this.image = image;
+		        this.expiryDate = expiryDate;
+		    }
+
+		    public String getName() { return name; }
+		    public int getId() { return id; }
+		    public float getPrice() { return price; }
+		    public int getQuantity() { return quantity; }
+		    public String getImage() { return image; }
+		    public Date getExpiryDate() { return expiryDate; }
+	}
+	
+	public final static String FILENAME1 = "testVendingMachine1.xmi";
+
+	public final static String FILENAME2 = "testVendingMachine2.xmi";
+	
+	public static Diagnostic validate(VendingMachine vm) {
+		return Diagnostician.INSTANCE.validate(vm);
+	}
+	
+	public static void main(String[] args) {
+		createConcreteSyntax1();
+	
+		createConcreteSyntax2();
+	}
+
+	private static void createConcreteSyntax1() {
+		var vm1Items = Arrays.asList(
+		        new ItemGroupConfig("Chocolates", 0, 1.25f, 10, "chocolate.png", Date.valueOf("2025-12-31")),
+		        new ItemGroupConfig("Drinks", 1, 2.25f, 10, "drinks.png", Date.valueOf("2025-12-31")),
+		        new ItemGroupConfig("Cookies", 2, 2.00f, 10, "cookies.png", Date.valueOf("2025-12-31"))
+		    );
+		var loc1 = VendingMachineUAQFactory.eINSTANCE.createLocation();
+		loc1.setLat(10.434f);
+		loc1.setLong(134.235f);
+		loc1.setName("Coppito, Laquila");
+		
+		VendingMachine vm1 = create("Coppito1",
+		        0,
+		        loc1,
+		        vm1Items,
+		        10,
+		        STATES.SELECT_ITEM,
+		        "02",
+		        STATE_OPERATIONS.SELECT_ITEM_SEND_INPUT,
+		        STATE_OPERATIONS.SELECT_ITEM_COLLECT_COIN,
+		        STATE_OPERATIONS.WAIT_FOR_PAYMENT_COLLECT_COIN);
+		
+		serializeModel(vm1, FILENAME1);
+		
+		VendingMachine loadedVm1 = load(FILENAME1);
+
+		Diagnostic d = validate(loadedVm1);
+		if (d.getSeverity() != Diagnostic.ERROR)
+			System.out.println("The model is valid");
+		else
+			System.out.println("The model is invalid");
+		System.out.println("Capacity:" + vm1.getInventory().getCapacity() + "\nItems Available: ");
+		vm1.getInventory().getItemGroups().forEach(z -> System.out.println(z.getName() + "\tQuantity:" + z.getQuantity() + "\tPrice:" + z.getPrice()));
+	}
+	
+	private static void createConcreteSyntax2() {
+		var vmItems = Arrays.asList(
+		        new ItemGroupConfig("Ibuprufen", 0, 4.25f, 10, "ibuprufen.png", Date.valueOf("2025-09-25")),
+		        new ItemGroupConfig("Supradyn", 1, 12.52f, 10, "supradyn.png", Date.valueOf("2025-10-11")),
+		        new ItemGroupConfig("Penisilin", 2, 52.00f, 10, "penisilin.png", Date.valueOf("2025-11-21"))
+		    );
+		var loc = VendingMachineUAQFactory.eINSTANCE.createLocation();
+		loc.setLat(10.434f);
+		loc.setLong(134.235f);
+		loc.setName("Via Delle Nocelle, Laquila");
+		
+		VendingMachine vm = create("Nocelle1",
+		        0,
+		        loc,
+		        vmItems,
+		        3,
+		        STATES.PROCESSING_ITEM,
+		        "12",
+		        STATE_OPERATIONS.PROCESSING_ITEM_PROCESS_ITEM,
+		        STATE_OPERATIONS.PROCESSING_ITEM_PROCESS_ITEM,
+		        STATE_OPERATIONS.ITEM_DISPATCHED_DISPATCH_CHANGE);
+		
+		serializeModel(vm, FILENAME2);
+		
+		VendingMachine loadedVm = load(FILENAME2);
+
+		Diagnostic d = validate(loadedVm);
+		if (d.getSeverity() != Diagnostic.ERROR)
+			System.out.println("The model is valid");
+		else
+			System.out.println("The model is invalid");
+		System.out.println("Capacity:" + vm.getInventory().getCapacity() + "\nItems Available: ");
+		vm.getInventory().getItemGroups().forEach(z -> System.out.println(z.getName() + "\tQuantity:" + z.getQuantity() + "\tPrice:" + z.getPrice()));
+	}
+	
+
+
+	public static VendingMachine load(String fileName) {
+		EPackage.Registry.INSTANCE.put(VendingMachineUAQPackage.eNS_URI, VendingMachineUAQPackage.eINSTANCE);
+		ResourceSet resSet = new ResourceSetImpl();
+		Resource resource = resSet.getResource(URI.createFileURI(fileName), true);
+		// Get the first model element and cast it to the right type, in my
+		// example everything is hierarchical included in this first node
+		VendingMachine myVm = (VendingMachine) resource.getContents().get(0);
+		
+		return myVm;
+	}
+
+	
+	public static void serializeModel(VendingMachine vm, String fileName) {
+		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+		Map<String, Object> m = reg.getExtensionToFactoryMap();
+		m.put("xmi", new XMIResourceFactoryImpl());
+
+		// Obtain a new resource set
+		ResourceSet resSet = new ResourceSetImpl();
+
+		// create a resource
+		Resource resource = resSet.createResource(URI.createURI(fileName));
+		resource.getContents().add(vm);
+
+		// now save the content.
+		try {
+			resource.save(Collections.EMPTY_MAP);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

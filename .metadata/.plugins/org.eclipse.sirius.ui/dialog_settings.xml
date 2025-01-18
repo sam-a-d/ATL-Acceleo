@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExportRepresentationsAsImagesDialog">
+		<item key="ExportRepresentationsAsImagesDialog.imageFormat" value="JPG"/>
+		<list key="ExportRepresentationsAsImagesDialog.file">
+			<item value="/Users/macbookpro/emf-workspace/VendingMachineUAQ/model"/>
+			<item value="/Users/macbookpro/emf-workspace/VendingMachineUAQ/model/vendingMachineUAQ.jpg"/>
+		</list>
+	</section>
+</section>

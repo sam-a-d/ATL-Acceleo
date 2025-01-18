@@ -1,0 +1,360 @@
+/**
+ */
+package vendingMachineUAQ.impl;
+
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import vendingMachineUAQ.PAYMENT_METHODS;
+import vendingMachineUAQ.PaymentProcessor;
+import vendingMachineUAQ.State;
+import vendingMachineUAQ.VendingMachineUAQPackage;
+import vendingMachineUAQ.util.VendingMachineUAQValidator;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Payment Processor</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link vendingMachineUAQ.impl.PaymentProcessorImpl#getAmound <em>Amound</em>}</li>
+ *   <li>{@link vendingMachineUAQ.impl.PaymentProcessorImpl#getPaymentMethod <em>Payment Method</em>}</li>
+ *   <li>{@link vendingMachineUAQ.impl.PaymentProcessorImpl#getState <em>State</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class PaymentProcessorImpl extends HasOperationImpl implements PaymentProcessor {
+	/**
+	 * The default value of the '{@link #getAmound() <em>Amound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAmound()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final float AMOUND_EDEFAULT = 0.0F;
+	/**
+	 * The cached value of the '{@link #getAmound() <em>Amound</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAmound()
+	 * @generated
+	 * @ordered
+	 */
+	protected float amound = AMOUND_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getPaymentMethod() <em>Payment Method</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentMethod()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final PAYMENT_METHODS PAYMENT_METHOD_EDEFAULT = PAYMENT_METHODS.COIN;
+	/**
+	 * The cached value of the '{@link #getPaymentMethod() <em>Payment Method</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPaymentMethod()
+	 * @generated
+	 * @ordered
+	 */
+	protected PAYMENT_METHODS paymentMethod = PAYMENT_METHOD_EDEFAULT;
+	/**
+	 * The cached value of the '{@link #getState() <em>State</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getState()
+	 * @generated
+	 * @ordered
+	 */
+	protected State state;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PaymentProcessorImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return VendingMachineUAQPackage.Literals.PAYMENT_PROCESSOR;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public float getAmound() {
+		return amound;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAmound(float newAmound) {
+		float oldAmound = amound;
+		amound = newAmound;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VendingMachineUAQPackage.PAYMENT_PROCESSOR__AMOUND,
+					oldAmound, amound));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public PAYMENT_METHODS getPaymentMethod() {
+		return paymentMethod;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPaymentMethod(PAYMENT_METHODS newPaymentMethod) {
+		PAYMENT_METHODS oldPaymentMethod = paymentMethod;
+		paymentMethod = newPaymentMethod == null ? PAYMENT_METHOD_EDEFAULT : newPaymentMethod;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					VendingMachineUAQPackage.PAYMENT_PROCESSOR__PAYMENT_METHOD, oldPaymentMethod, paymentMethod));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public State getState() {
+		if (state != null && state.eIsProxy()) {
+			InternalEObject oldState = (InternalEObject) state;
+			state = (State) eResolveProxy(oldState);
+			if (state != oldState) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							VendingMachineUAQPackage.PAYMENT_PROCESSOR__STATE, oldState, state));
+			}
+		}
+		return state;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public State basicGetState() {
+		return state;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setState(State newState) {
+		State oldState = state;
+		state = newState;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VendingMachineUAQPackage.PAYMENT_PROCESSOR__STATE,
+					oldState, state));
+	}
+
+	/**
+	 * The cached validation expression for the '{@link #validAmount(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Valid Amount</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validAmount(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALID_AMOUNT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "\n" + "\t\t\tself.amound >= 0.0";
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean validAmount(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VendingMachineUAQValidator.validate(VendingMachineUAQPackage.Literals.PAYMENT_PROCESSOR, this,
+				diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				VendingMachineUAQPackage.Literals.PAYMENT_PROCESSOR___VALID_AMOUNT__DIAGNOSTICCHAIN_MAP,
+				VALID_AMOUNT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR,
+				VendingMachineUAQValidator.DIAGNOSTIC_SOURCE,
+				VendingMachineUAQValidator.PAYMENT_PROCESSOR__VALID_AMOUNT);
+	}
+
+	/**
+	 * The cached validation expression for the '{@link #validStateForPayment(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Valid State For Payment</em>}' invariant operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #validStateForPayment(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALID_STATE_FOR_PAYMENT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION = "\n"
+			+ "\t\t\tself.operation = STATE_OPERATIONS::WAIT_FOR_PAYMENT_collectCoin implies\n"
+			+ "\t\t\tself.state.stage = STATES::WAIT_FOR_PAYMENT";
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean validStateForPayment(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return VendingMachineUAQValidator.validate(VendingMachineUAQPackage.Literals.PAYMENT_PROCESSOR, this,
+				diagnostics, context, "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				VendingMachineUAQPackage.Literals.PAYMENT_PROCESSOR___VALID_STATE_FOR_PAYMENT__DIAGNOSTICCHAIN_MAP,
+				VALID_STATE_FOR_PAYMENT_DIAGNOSTIC_CHAIN_MAP__EEXPRESSION, Diagnostic.ERROR,
+				VendingMachineUAQValidator.DIAGNOSTIC_SOURCE,
+				VendingMachineUAQValidator.PAYMENT_PROCESSOR__VALID_STATE_FOR_PAYMENT);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+		case VendingMachineUAQPackage.PAYMENT_PROCESSOR__AMOUND:
+			return getAmound();
+		case VendingMachineUAQPackage.PAYMENT_PROCESSOR__PAYMENT_METHOD:
+			return getPaymentMethod();
+		case VendingMachineUAQPackage.PAYMENT_PROCESSOR__STATE:
+			if (resolve)
+				return getState();
+			return basicGetState();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+		case VendingMachineUAQPackage.PAYMENT_PROCESSOR__AMOUND:
+			setAmound((Float) newValue);
+			return;
+		case VendingMachineUAQPackage.PAYMENT_PROCESSOR__PAYMENT_METHOD:
+			setPaymentMethod((PAYMENT_METHODS) newValue);
+			return;
+		case VendingMachineUAQPackage.PAYMENT_PROCESSOR__STATE:
+			setState((State) newValue);
+			return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+		case VendingMachineUAQPackage.PAYMENT_PROCESSOR__AMOUND:
+			setAmound(AMOUND_EDEFAULT);
+			return;
+		case VendingMachineUAQPackage.PAYMENT_PROCESSOR__PAYMENT_METHOD:
+			setPaymentMethod(PAYMENT_METHOD_EDEFAULT);
+			return;
+		case VendingMachineUAQPackage.PAYMENT_PROCESSOR__STATE:
+			setState((State) null);
+			return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+		case VendingMachineUAQPackage.PAYMENT_PROCESSOR__AMOUND:
+			return amound != AMOUND_EDEFAULT;
+		case VendingMachineUAQPackage.PAYMENT_PROCESSOR__PAYMENT_METHOD:
+			return paymentMethod != PAYMENT_METHOD_EDEFAULT;
+		case VendingMachineUAQPackage.PAYMENT_PROCESSOR__STATE:
+			return state != null;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case VendingMachineUAQPackage.PAYMENT_PROCESSOR___VALID_AMOUNT__DIAGNOSTICCHAIN_MAP:
+			return validAmount((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		case VendingMachineUAQPackage.PAYMENT_PROCESSOR___VALID_STATE_FOR_PAYMENT__DIAGNOSTICCHAIN_MAP:
+			return validStateForPayment((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (amound: ");
+		result.append(amound);
+		result.append(", paymentMethod: ");
+		result.append(paymentMethod);
+		result.append(')');
+		return result.toString();
+	}
+
+} //PaymentProcessorImpl

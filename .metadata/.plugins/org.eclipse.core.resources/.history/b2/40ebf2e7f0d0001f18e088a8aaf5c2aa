@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vendingMachineUAQ:VendingMachine
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:vendingMachineUAQ="http://www.example.org/vendingMachineUAQ"
+    xsi:schemaLocation="http://www.example.org/vendingMachineUAQ /VendingMachineUAQ/model/vendingMachineUAQ.ecore"
+    name="Coppito1"
+    id="1">
+  <location
+      name="L'Aquila"
+      lat="42.3507"
+      long="13.3999"/>
+  <state/>
+  <keypad operation="SELECT_ITEM_sendInput"
+      input="1"/>
+  <paymentProcessor
+      amound="1.25"
+      state="//@state"/>
+  <itemProcessor
+      state="//@state"/>
+</vendingMachineUAQ:VendingMachine>

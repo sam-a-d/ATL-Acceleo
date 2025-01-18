@@ -1,0 +1,269 @@
+/**
+ */
+package vendingMachineUAQ.impl;
+
+import java.util.Collection;
+import java.util.Date;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
+import vendingMachineUAQ.Inventory;
+import vendingMachineUAQ.ItemGroup;
+import vendingMachineUAQ.VendingMachineUAQPackage;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Inventory</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link vendingMachineUAQ.impl.InventoryImpl#getItemGroups <em>Item Groups</em>}</li>
+ *   <li>{@link vendingMachineUAQ.impl.InventoryImpl#getCapacity <em>Capacity</em>}</li>
+ *   <li>{@link vendingMachineUAQ.impl.InventoryImpl#getLastRestocked <em>Last Restocked</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class InventoryImpl extends HasIdImpl implements Inventory {
+	/**
+	 * The cached value of the '{@link #getItemGroups() <em>Item Groups</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getItemGroups()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ItemGroup> itemGroups;
+
+	/**
+	 * The default value of the '{@link #getCapacity() <em>Capacity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCapacity()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int CAPACITY_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getCapacity() <em>Capacity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCapacity()
+	 * @generated
+	 * @ordered
+	 */
+	protected int capacity = CAPACITY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getLastRestocked() <em>Last Restocked</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastRestocked()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date LAST_RESTOCKED_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getLastRestocked() <em>Last Restocked</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastRestocked()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date lastRestocked = LAST_RESTOCKED_EDEFAULT;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InventoryImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return VendingMachineUAQPackage.Literals.INVENTORY;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<ItemGroup> getItemGroups() {
+		if (itemGroups == null) {
+			itemGroups = new EObjectResolvingEList<ItemGroup>(ItemGroup.class, this,
+					VendingMachineUAQPackage.INVENTORY__ITEM_GROUPS);
+		}
+		return itemGroups;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getCapacity() {
+		return capacity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCapacity(int newCapacity) {
+		int oldCapacity = capacity;
+		capacity = newCapacity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VendingMachineUAQPackage.INVENTORY__CAPACITY,
+					oldCapacity, capacity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Date getLastRestocked() {
+		return lastRestocked;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setLastRestocked(Date newLastRestocked) {
+		Date oldLastRestocked = lastRestocked;
+		lastRestocked = newLastRestocked;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VendingMachineUAQPackage.INVENTORY__LAST_RESTOCKED,
+					oldLastRestocked, lastRestocked));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+		case VendingMachineUAQPackage.INVENTORY__ITEM_GROUPS:
+			return getItemGroups();
+		case VendingMachineUAQPackage.INVENTORY__CAPACITY:
+			return getCapacity();
+		case VendingMachineUAQPackage.INVENTORY__LAST_RESTOCKED:
+			return getLastRestocked();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+		case VendingMachineUAQPackage.INVENTORY__ITEM_GROUPS:
+			getItemGroups().clear();
+			getItemGroups().addAll((Collection<? extends ItemGroup>) newValue);
+			return;
+		case VendingMachineUAQPackage.INVENTORY__CAPACITY:
+			setCapacity((Integer) newValue);
+			return;
+		case VendingMachineUAQPackage.INVENTORY__LAST_RESTOCKED:
+			setLastRestocked((Date) newValue);
+			return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+		case VendingMachineUAQPackage.INVENTORY__ITEM_GROUPS:
+			getItemGroups().clear();
+			return;
+		case VendingMachineUAQPackage.INVENTORY__CAPACITY:
+			setCapacity(CAPACITY_EDEFAULT);
+			return;
+		case VendingMachineUAQPackage.INVENTORY__LAST_RESTOCKED:
+			setLastRestocked(LAST_RESTOCKED_EDEFAULT);
+			return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+		case VendingMachineUAQPackage.INVENTORY__ITEM_GROUPS:
+			return itemGroups != null && !itemGroups.isEmpty();
+		case VendingMachineUAQPackage.INVENTORY__CAPACITY:
+			return capacity != CAPACITY_EDEFAULT;
+		case VendingMachineUAQPackage.INVENTORY__LAST_RESTOCKED:
+			return LAST_RESTOCKED_EDEFAULT == null ? lastRestocked != null
+					: !LAST_RESTOCKED_EDEFAULT.equals(lastRestocked);
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (capacity: ");
+		result.append(capacity);
+		result.append(", lastRestocked: ");
+		result.append(lastRestocked);
+		result.append(')');
+		return result.toString();
+	}
+
+} //InventoryImpl

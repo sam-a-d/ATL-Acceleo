@@ -1,0 +1,217 @@
+/**
+ */
+package vendingMachineUAQ.impl;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import vendingMachineUAQ.Location;
+import vendingMachineUAQ.VendingMachineUAQPackage;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Location</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link vendingMachineUAQ.impl.LocationImpl#getLat <em>Lat</em>}</li>
+ *   <li>{@link vendingMachineUAQ.impl.LocationImpl#getLong <em>Long</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class LocationImpl extends NamedEntityImpl implements Location {
+	/**
+	 * The default value of the '{@link #getLat() <em>Lat</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLat()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final float LAT_EDEFAULT = 0.0F;
+	/**
+	 * The cached value of the '{@link #getLat() <em>Lat</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLat()
+	 * @generated
+	 * @ordered
+	 */
+	protected float lat = LAT_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getLong() <em>Long</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLong()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final float LONG_EDEFAULT = 0.0F;
+	/**
+	 * The cached value of the '{@link #getLong() <em>Long</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLong()
+	 * @generated
+	 * @ordered
+	 */
+	protected float long_ = LONG_EDEFAULT;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LocationImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return VendingMachineUAQPackage.Literals.LOCATION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public float getLat() {
+		return lat;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setLat(float newLat) {
+		float oldLat = lat;
+		lat = newLat;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VendingMachineUAQPackage.LOCATION__LAT, oldLat, lat));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public float getLong() {
+		return long_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setLong(float newLong) {
+		float oldLong = long_;
+		long_ = newLong;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VendingMachineUAQPackage.LOCATION__LONG, oldLong,
+					long_));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+		case VendingMachineUAQPackage.LOCATION__LAT:
+			return getLat();
+		case VendingMachineUAQPackage.LOCATION__LONG:
+			return getLong();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+		case VendingMachineUAQPackage.LOCATION__LAT:
+			setLat((Float) newValue);
+			return;
+		case VendingMachineUAQPackage.LOCATION__LONG:
+			setLong((Float) newValue);
+			return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+		case VendingMachineUAQPackage.LOCATION__LAT:
+			setLat(LAT_EDEFAULT);
+			return;
+		case VendingMachineUAQPackage.LOCATION__LONG:
+			setLong(LONG_EDEFAULT);
+			return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+		case VendingMachineUAQPackage.LOCATION__LAT:
+			return lat != LAT_EDEFAULT;
+		case VendingMachineUAQPackage.LOCATION__LONG:
+			return long_ != LONG_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (lat: ");
+		result.append(lat);
+		result.append(", long: ");
+		result.append(long_);
+		result.append(')');
+		return result.toString();
+	}
+
+} //LocationImpl
