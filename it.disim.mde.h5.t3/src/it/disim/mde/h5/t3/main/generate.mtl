@@ -61,6 +61,7 @@
 	        <div>
 	            Longitude: [aVendingMachine.location.long/]
 	        </div>
+			<div class="back-home"> <a href="[aVendingMachine.name + '.html'/]"> Back to Home </div>
 		</div>
     </body>
 </html>
@@ -98,12 +99,13 @@
 						   </head>
 						    <body>
 								<div class='item-container'>
-							        <h1 style="text-align: center;">Name: [it.name/]</h1>
+							        <h1 style="text-align: center;">Details of Product Group</h1>
 									<div>
 										[for (eachItem : Item | it.items)]
-											<div>ID: [eachItem.id/] - Expiry: [eachItem.expiry/]</div>								
+											<div>Product ID: [eachItem.id/] - Expiry: [eachItem.expiry/]</div>								
 										[/for]
 									</div>
+									<div class="back-home"> <a href="../[aVendingMachine.name + '.html'/]"> Back to Home </div>
 								</div>
 
 					    </body>
@@ -114,6 +116,7 @@
 				</li>
 			[/for]
 		</ul>
+		<div class="back-home"> <a href="[aVendingMachine.name + '.html'/]"> Back to Home </div>
 	</div>
     </body>
 </html>
@@ -135,6 +138,7 @@
 	        <div>
 	            <strong>Operation:</strong> [aVendingMachine.keypad.operation/]
 	        </div>
+			<div class="back-home"> <a href="[aVendingMachine.name + '.html'/]"> Back to Home </div>
 		</div>
     </body>
 </html>
@@ -163,6 +167,7 @@
 				</ul>
 	
 	        </div>
+			<div class="back-home"> <a href="[aVendingMachine.name + '.html'/]"> Back to Home </div>
 		</div>
     </body>
 </html>
@@ -177,7 +182,7 @@
     </head>
     <body>
 		<div class="container">
-	        <h1 style="text-align: center;">ItemProcessor Details</h1>
+	        <h1 style="text-align: center;">Payment Processor Details</h1>
 	        <div>
 				<ul>
 					<li>
@@ -196,6 +201,7 @@
 				</ul>
 	
 	        </div>
+			<div class="back-home"> <a href="[aVendingMachine.name + '.html'/]"> Back to Home </div>
 		</div>
     </body>
 </html>
@@ -242,6 +248,12 @@ li{
   padding: 10px;
 }
 
+.back-home{
+
+}
+.back-home a{
+	background-color: #ff00008a;
+}
 	
 [/file]
 
