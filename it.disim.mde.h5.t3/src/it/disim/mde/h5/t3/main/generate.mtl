@@ -9,35 +9,37 @@
 <html>
     <head>
         <title>Details for [aVendingMachine.name/]</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
-        <h1 style="text-align: center;">Details for [aVendingMachine.name/]</h1>
-        <div>
-            Name of the Vending Machine: [aVendingMachine.name/]
-        </div>
-        <div>
-            Location: [aVendingMachine.location.name/] - <a href="[aVendingMachine.location.name.toLowerCase()/]_location.html">View Details</a>
-        </div>
-		<div>
-            State: [aVendingMachine.state.stage/]
-        </div>
-        <div>
-            Keypad:
-            <a href="keypad.html">View Keypad</a>
-        </div>
-		<div>
-            ItemProcessor:
-            <a href="itemprocessor.html">View ItemProcessor</a>
-        </div>
-		<div>
-            PaymentProcessor:
-            <a href="paymentprocessor.html">View PaymentProcessor</a>
-        </div>
-        <div>
-            Inventory: 
-            <a href="[aVendingMachine.inventory.id/]_inventory.html">View Inventory</a>
-        </div>
-
+		<div class="container">
+	        <h1 style="text-align: center;">Details for VendingMachine: [aVendingMachine.name/]</h1>
+	        <div>
+	            Name of the Vending Machine: [aVendingMachine.name/]
+	        </div>
+	        <div>
+	            Location: [aVendingMachine.location.name/] - <a href="[aVendingMachine.location.name.toLowerCase()/]_location.html">View Details</a>
+	        </div>
+			<div>
+	            State: [aVendingMachine.state.stage/]
+	        </div>
+	        <div>
+	            Keypad:
+	            <a href="keypad.html">View Keypad</a>
+	        </div>
+			<div>
+	            ItemProcessor:
+	            <a href="itemprocessor.html">View ItemProcessor</a>
+	        </div>
+			<div>
+	            PaymentProcessor:
+	            <a href="paymentprocessor.html">View PaymentProcessor</a>
+	        </div>
+	        <div>
+	            Inventory: 
+	            <a href="[aVendingMachine.inventory.id/]_inventory.html">View Inventory</a>
+	        </div>
+		</div>
 		
     </body>
 </html>
@@ -48,15 +50,18 @@
 <html>
     <head>
         <title>Details for Location [aVendingMachine.location.name/]</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
-        <h1 style="text-align: center;">Location Details</h1>
-        <div>
-            Latitude: [aVendingMachine.location.lat/]
-        </div>
-        <div>
-            Longitude: [aVendingMachine.location.long/]
-        </div>
+		<div class="container">
+	        <h1 style="text-align: center;">Location Details</h1>
+	        <div>
+	            Latitude: [aVendingMachine.location.lat/]
+	        </div>
+	        <div>
+	            Longitude: [aVendingMachine.location.long/]
+	        </div>
+		</div>
     </body>
 </html>
 [/file]
@@ -66,8 +71,10 @@
 <html>
     <head>
         <title>Details for Inventory</title>
+   		<link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
+		<div class="container">
         <h1 style="text-align: center;">Inventory Details</h1>
         <div>
             <strong>ID:</strong> [aVendingMachine.inventory.id/]
@@ -87,14 +94,18 @@
 					<html>
 					    <head>
 					        <title>Details for Item Group</title>
-					    </head>
-					    <body>
-					        <h1 style="text-align: center;">Name: [it.name/]</h1>
-								<div>
-								[for (eachItem : Item | it.items)]
-									<div>ID: [eachItem.id/] - Expiry: [eachItem.expiry/]</div>								
-								[/for]
+					    	<link rel="stylesheet" type="text/css" href="../css/style.css">
+						   </head>
+						    <body>
+								<div class='item-container'>
+							        <h1 style="text-align: center;">Name: [it.name/]</h1>
+									<div>
+										[for (eachItem : Item | it.items)]
+											<div>ID: [eachItem.id/] - Expiry: [eachItem.expiry/]</div>								
+										[/for]
+									</div>
 								</div>
+
 					    </body>
 					</html>
 				[/file]
@@ -103,7 +114,7 @@
 				</li>
 			[/for]
 		</ul>
-
+	</div>
     </body>
 </html>
 [/file]
@@ -113,15 +124,18 @@
 <html>
     <head>
         <title>Details for Keypad</title>
+    	<link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
-        <h1 style="text-align: center;">Keypad Details</h1>
-        <div>
-            <strong>Input:</strong> [aVendingMachine.keypad.input/]
-        </div>
-        <div>
-            <strong>Operation:</strong> [aVendingMachine.keypad.operation/]
-        </div>
+		<div class="container">
+	        <h1 style="text-align: center;">Keypad Details</h1>
+	        <div>
+	            <strong>Input:</strong> [aVendingMachine.keypad.input/]
+	        </div>
+	        <div>
+	            <strong>Operation:</strong> [aVendingMachine.keypad.operation/]
+	        </div>
+		</div>
     </body>
 </html>
 [/file]
@@ -132,21 +146,24 @@
 <html>
     <head>
         <title>Maintenance Details</title>
+    	<link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
-        <h1 style="text-align: center;">ItemProcessor Details</h1>
-        <div>
-			<ul>
-				<li>
-            		State: [aVendingMachine.itemProcessor.state.stage/]
-				</li>
-				
-				<li>
-            		Current Operation: [aVendingMachine.itemProcessor.operation/]
-				</li>
-			</ul>
-
-        </div>
+		<div class="container">
+	        <h1 style="text-align: center;">ItemProcessor Details</h1>
+	        <div>
+				<ul>
+					<li>
+	            		State: [aVendingMachine.itemProcessor.state.stage/]
+					</li>
+					
+					<li>
+	            		Current Operation: [aVendingMachine.itemProcessor.operation/]
+					</li>
+				</ul>
+	
+	        </div>
+		</div>
     </body>
 </html>
 [/file]
@@ -156,29 +173,77 @@
 <html>
     <head>
         <title>Maintenance Details</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
-        <h1 style="text-align: center;">ItemProcessor Details</h1>
-        <div>
-			<ul>
-				<li>
-            		State: [aVendingMachine.paymentProcessor.state.stage/]
-				</li>
-				
-				<li>
-            		Amount: [aVendingMachine.paymentProcessor.amound/]
-				</li>
-				<li>
-            		Payment Method: [aVendingMachine.paymentProcessor.paymentMethod/]
-				</li>
-				<li>
-            		Current Operation: [aVendingMachine.paymentProcessor.operation/]
-				</li>
-			</ul>
-
-        </div>
+		<div class="container">
+	        <h1 style="text-align: center;">ItemProcessor Details</h1>
+	        <div>
+				<ul>
+					<li>
+	            		State: [aVendingMachine.paymentProcessor.state.stage/]
+					</li>
+					
+					<li>
+	            		Amount: [aVendingMachine.paymentProcessor.amound/]
+					</li>
+					<li>
+	            		Payment Method: [aVendingMachine.paymentProcessor.paymentMethod/]
+					</li>
+					<li>
+	            		Current Operation: [aVendingMachine.paymentProcessor.operation/]
+					</li>
+				</ul>
+	
+	        </div>
+		</div>
     </body>
 </html>
+
 [/file]
+
+[file ('./css/style.css', false, 'UTF-8')]
+.container{
+	margin: auto;
+  width: 600px;
+  border: 2px solid #73AD21;
+  padding: 10px;
+}
+
+.text-center{
+	text-align: center;
+}
+
+a{
+background-color: #0440aa99; /* Green */
+  border: none;
+  color: white;
+  padding: 0px 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+div{
+	margin: 15px 2px;
+	
+}
+
+li{
+	margin: 15px 2px;
+	
+}
+
+.item-container{
+	margin: auto;
+  width: 600px;
+  border: 2px solid #73AD21;
+  padding: 10px;
+}
+
+	
+[/file]
+
 
 [/template]
