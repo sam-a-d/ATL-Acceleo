@@ -4,9 +4,9 @@ This project demonstrates the application of Model-Driven Engineering (MDE) prin
 
 ## Features
 
-- A vending machine model based on MDE principles
-- Use of EMF for meta-modeling
-- OCL for constraints and validations
+- The existing VendingMachine metamodel is refined
+- M2M transformation using ATL
+- Defined a Model-to-Text (M2T) transformation that generates informative HTML pages for a given domain using the Acceleo template language
 
 ## Requirements
 
@@ -19,4 +19,4 @@ This project demonstrates the application of Model-Driven Engineering (MDE) prin
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Ahsan-Aziz-Ishan/EMF-OCL-VendingMachine.git
+   git clone git@github.com:sam-a-d/ATL-Acceleo.git
