@@ -24,7 +24,7 @@
 	            State: [aVendingMachine.state.stage/]
 	        </div>
 	        <div>
-	            Keypad:
+	            Keypad: Input - [aVendingMachine.keypad.input/] 
 	            <a href="keypad.html">View Keypad</a>
 	        </div>
 			<div>
@@ -36,7 +36,7 @@
 	            <a href="paymentprocessor.html">View PaymentProcessor</a>
 	        </div>
 	        <div>
-	            Inventory: 
+	            Inventory: ID - [aVendingMachine.inventory.id/] 
 	            <a href="[aVendingMachine.inventory.id/]_inventory.html">View Inventory</a>
 	        </div>
 		</div>
