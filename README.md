@@ -1,6 +1,6 @@
 # ATL and Acceleo - Vending Machine
 
-This project demonstrates the application of Model-Driven Engineering (MDE) principles for a vending machine system. It utilizes the EMF (Eclipse Modeling Framework) and OCL (Object Constraint Language) to model and validate the vending machine's behavior. Furthermore, it uses ATL for Model to Mode (M2M) transformation and Acceleo to Model-to-Text (M2T) transformation.
+This project demonstrates the application of Model-Driven Engineering (MDE) principles for a vending machine system. It utilizes the EMF (Eclipse Modeling Framework) and OCL (Object Constraint Language) to model and validate the vending machine's behavior. Furthermore, it uses ATL for Model to Model (M2M) transformation and Acceleo to Model-to-Text (M2T) transformation.
 
 ## Features
 
